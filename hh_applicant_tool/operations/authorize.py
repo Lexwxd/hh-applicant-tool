@@ -2,9 +2,12 @@ import argparse
 import logging
 from urllib.parse import parse_qs, urlsplit
 import sys
+import os # <-- Add this import
 from typing import Any
 from ..utils import print_err
 
+# Set the software renderer BEFORE creating QApplication
+os.environ["QT_QUICK_BACKEND"] = "software" # <-- Add this line
 
 QT_IMPORTED = False
 
